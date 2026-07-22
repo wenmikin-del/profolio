@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>溫瑋淇 Vicky Wen｜活動企劃 × 動態影像 × 平面設計</title>
+<meta name="description" content="溫瑋淇 Vicky Wen — 6 年橫跨台灣與加拿大的活動企劃、行銷與視覺設計經驗。皮耶絲台灣巡演、台積電女科學家之旅、54 萬訂閱 YouTube 頻道動態圖像設計。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1b20;
+  --ink-soft:#2a2930;
+  --paper:#f5f3ee;
+  --paper-deep:#ece9e1;
+  --velvet:#7e2231;
+  --brass:#a98b52;
+  --grey:#6e6a63;
+  --hairline:#d8d4ca;
+  --serif-latin:"Cormorant Garamond",serif;
+  --serif:"Noto Serif TC","Cormorant Garamond",serif;
+  --sans:"Noto Sans TC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.85;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--velvet);outline-offset:3px}
+img{display:block;max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(28,27,32,.92);backdrop-filter:blur(8px);
+  color:var(--paper);
+  border-bottom:1px solid rgba(245,243,238,.12);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-name{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.14em;text-decoration:none}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-size:12.5px;letter-spacing:.16em;text-decoration:none;opacity:.75;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+@media(max-width:680px){.nav-links{display:none}}
+
+/* ============ HERO：programme cover ============ */
+header{
+  background:var(--ink);color:var(--paper);
+  min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  padding:120px 24px 80px;
+  position:relative;
+}
+.cover{
+  width:100%;max-width:860px;
+  border:1px solid rgba(245,243,238,.35);
+  outline:1px solid rgba(245,243,238,.14);
+  outline-offset:6px;
+  padding:clamp(40px,7vw,84px) clamp(24px,6vw,72px);
+  text-align:center;
+  position:relative;
+}
+.cover-eyebrow{
+  font-family:var(--serif-latin);
+  font-size:14px;letter-spacing:.55em;text-indent:.55em;
+  color:var(--brass);text-transform:uppercase;
+}
+.cover-rule{
+  width:56px;height:1px;background:var(--brass);
+  margin:26px auto;
+  position:relative;
+}
+.cover-rule::after{
+  content:"";position:absolute;left:50%;top:-2.5px;
+  width:6px;height:6px;background:var(--brass);
+  transform:translateX(-50%) rotate(45deg);
+}
+.cover h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(22px,3.4vw,32px);
+  letter-spacing:.28em;text-indent:.28em;line-height:1.3;
+  color:rgba(245,243,238,.9);
+}
+.cover .latin-name{
+  font-family:var(--serif-latin);font-weight:500;font-style:italic;
+  font-size:clamp(44px,8vw,76px);letter-spacing:.06em;
+  color:var(--paper);
+  margin-top:10px;line-height:1.05;
+}
+.cover-roles{
+  margin-top:30px;
+  font-size:clamp(13px,1.7vw,15.5px);
+  letter-spacing:.22em;
+  color:rgba(245,243,238,.9);
+}
+.cover-roles span{color:var(--brass);margin:0 .5em}
+.cover-lede{
+  margin:30px auto 0;max-width:33em;
+  font-weight:300;font-size:15px;line-height:2.1;
+  color:rgba(245,243,238,.72);
+}
+.cover-stats{
+  margin-top:48px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(245,243,238,.22);
+  padding-top:34px;gap:12px;
+}
+@media(max-width:680px){.cover-stats{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+.stat b{
+  display:block;font-family:var(--serif-latin);font-weight:500;
+  font-size:clamp(26px,4vw,36px);line-height:1.1;letter-spacing:.02em;
+  white-space:nowrap;
+}
+.stat b.sm{font-size:clamp(19px,2.9vw,27px);letter-spacing:0}
+.stat small{
+  display:block;margin-top:8px;
+  font-size:11.5px;letter-spacing:.14em;color:rgba(245,243,238,.6);
+}
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  font-family:var(--serif-latin);font-size:11px;letter-spacing:.4em;text-indent:.4em;
+  color:rgba(245,243,238,.45);
+}
+
+/* ============ SECTIONS：programme items ============ */
+section{padding:clamp(80px,12vw,130px) 0}
+section + section{border-top:1px solid var(--hairline)}
+.mvt{
+  display:flex;align-items:baseline;gap:20px;
+  margin-bottom:clamp(40px,6vw,64px);
+}
+.mvt-no{
+  font-family:var(--serif-latin);font-style:italic;font-weight:500;
+  font-size:15px;letter-spacing:.2em;color:var(--velvet);
+  white-space:nowrap;
+}
+.mvt h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(26px,4vw,36px);letter-spacing:.14em;line-height:1.3;
+}
+.mvt .en{
+  font-family:var(--serif-latin);font-style:italic;font-weight:400;
+  font-size:15px;letter-spacing:.1em;color:var(--grey);
+  margin-left:14px;
+}
+@media(max-width:560px){.mvt{flex-direction:column;gap:8px}.mvt .en{margin-left:0;display:block}}
+.section-note{
+  max-width:38em;color:var(--grey);font-size:14.5px;
+  margin:-26px 0 48px;
+}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(36px,6vw,72px)}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-main p{margin-bottom:1.4em;font-size:15.5px}
+.about-main .em{color:var(--velvet)}
+.about-side h3{
+  font-family:var(--serif-latin);font-size:13px;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--brass);
+  margin-bottom:18px;
+}
+.about-side ul{list-style:none}
+.about-side li{
+  padding:13px 0;border-bottom:1px solid var(--hairline);
+  font-size:14px;display:flex;justify-content:space-between;gap:16px;
+}
+.about-side li b{font-weight:500}
+.about-side li span{color:var(--grey);white-space:nowrap}
+.about-side .tools{margin-top:34px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tag{
+  font-size:12px;letter-spacing:.06em;color:var(--ink);
+  border:1px solid var(--hairline);padding:5px 12px;border-radius:99px;
+  background:#fff;
+}
+
+/* ============ MOTION / VIDEO ============ */
+#motion{background:var(--ink);color:var(--paper)}
+#motion .mvt h2{color:var(--paper)}
+#motion .mvt .en{color:rgba(245,243,238,.55)}
+#motion .section-note{color:rgba(245,243,238,.68)}
+#motion .section-note b{color:var(--brass);font-weight:500}
+.video-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:26px;
+}
+@media(max-width:760px){.video-grid{grid-template-columns:1fr}}
+.video{background:#000;border:1px solid rgba(245,243,238,.18)}
+.video.wide{grid-column:1 / -1}
+.frame{position:relative;width:100%;aspect-ratio:16/9}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-btn{
+  position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;
+  cursor:pointer;background:#000;overflow:hidden;display:block;
+}
+.vid-btn img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease,opacity .3s ease;opacity:.86;
+}
+.vid-btn:hover img,.vid-btn:focus-visible img{transform:scale(1.04);opacity:1}
+.vid-btn .play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:66px;height:66px;border-radius:50%;
+  background:rgba(28,27,32,.62);border:1.5px solid rgba(245,243,238,.85);
+  transition:background .2s ease,transform .2s ease;
+}
+.vid-btn:hover .play,.vid-btn:focus-visible .play{background:var(--velvet);transform:translate(-50%,-50%) scale(1.08)}
+.vid-btn .play::after{
+  content:"";position:absolute;top:50%;left:53%;transform:translate(-50%,-50%);
+  border-style:solid;border-width:11px 0 11px 18px;
+  border-color:transparent transparent transparent var(--paper);
+}
+.video figcaption{
+  padding:14px 16px;font-size:12.5px;letter-spacing:.1em;
+  color:rgba(245,243,238,.66);
+  border-top:1px solid rgba(245,243,238,.14);
+  display:flex;justify-content:space-between;gap:12px;
+}
+.video figcaption i{font-family:var(--serif-latin);color:var(--brass);font-style:italic}
+
+/* ============ CASE STUDIES ============ */
+.case-list{display:flex;flex-direction:column}
+.case{
+  display:grid;grid-template-columns:170px 1fr auto;gap:clamp(20px,4vw,48px);
+  padding:clamp(30px,4vw,44px) 0;
+  border-bottom:1px solid var(--hairline);
+  align-items:start;
+}
+.case:first-child{border-top:1px solid var(--hairline)}
+@media(max-width:760px){.case{grid-template-columns:1fr;gap:14px}}
+.case-year{
+  font-family:var(--serif-latin);font-style:italic;
+  font-size:15px;letter-spacing:.08em;color:var(--grey);
+  padding-top:4px;
+}
+.case h3{
+  font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.06em;
+  margin-bottom:4px;
+}
+.case .case-en{
+  font-family:var(--serif-latin);font-style:italic;font-size:14.5px;
+  color:var(--grey);margin-bottom:14px;
+}
+.case p{font-size:14.5px;max-width:44em;color:var(--ink-soft)}
+.case-metrics{
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;
+  font-size:13px;color:var(--grey);letter-spacing:.03em;
+}
+.case-metrics b{color:var(--velvet);font-weight:500;font-family:var(--serif-latin);font-size:15px;letter-spacing:0}
+.case-link{
+  align-self:start;justify-self:end;white-space:nowrap;
+  font-size:12.5px;letter-spacing:.18em;text-decoration:none;
+  color:var(--velvet);border:1px solid var(--velvet);
+  padding:9px 18px;transition:background .2s,color .2s;
+  margin-top:4px;
+}
+.case-link:hover{background:var(--velvet);color:var(--paper)}
+@media(max-width:760px){.case-link{justify-self:start}}
+
+/* ============ GRAPHIC DESIGN ============ */
+#design{background:var(--paper-deep)}
+.poster-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+@media(max-width:900px){.poster-grid{grid-template-columns:repeat(2,1fr)}}
+.poster{
+  text-decoration:none;display:block;
+}
+.poster .ph{
+  overflow:hidden;background:#fff;
+  box-shadow:0 1px 2px rgba(28,27,32,.12),0 10px 26px rgba(28,27,32,.10);
+}
+.poster img{width:100%;aspect-ratio:3/4.15;object-fit:cover;transition:transform .5s ease}
+.poster:hover img{transform:scale(1.03)}
+.poster figcaption{
+  margin-top:12px;font-size:12.5px;letter-spacing:.08em;color:var(--grey);
+}
+.poster figcaption b{display:block;color:var(--ink);font-weight:500;font-size:13.5px;margin-bottom:2px}
+.design-cta{
+  margin-top:56px;text-align:center;
+}
+.design-cta a{
+  font-size:13px;letter-spacing:.22em;text-decoration:none;
+  color:var(--ink);border:1px solid var(--ink);
+  padding:13px 30px;display:inline-block;
+  transition:background .2s,color .2s;
+}
+.design-cta a:hover{background:var(--ink);color:var(--paper)}
+
+/* ============ CONTACT / ENCORE ============ */
+footer{
+  background:var(--ink);color:var(--paper);
+  text-align:center;
+  padding:clamp(90px,12vw,140px) 24px 60px;
+}
+.encore-eyebrow{
+  font-family:var(--serif-latin);font-style:italic;
+  font-size:16px;letter-spacing:.3em;text-indent:.3em;color:var(--brass);
+}
+footer h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(26px,4.5vw,40px);letter-spacing:.14em;
+  margin:22px 0 14px;
+}
+footer .foot-note{
+  color:rgba(245,243,238,.65);font-weight:300;font-size:14.5px;
+  max-width:30em;margin:0 auto;
+}
+.contact-row{
+  margin-top:44px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px;
+}
+.contact-row a{
+  font-size:12.5px;letter-spacing:.16em;text-decoration:none;
+  border:1px solid rgba(245,243,238,.4);padding:11px 22px;
+  transition:border-color .2s,background .2s;
+}
+.contact-row a:hover{border-color:var(--brass);background:rgba(169,139,82,.12)}
+.fin{
+  margin-top:80px;
+  font-family:var(--serif-latin);font-style:italic;
+  font-size:12px;letter-spacing:.3em;color:rgba(245,243,238,.4);
+}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ============ LIGHTBOX ============ */
+.lb{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(18,17,21,.9);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:clamp(16px,4vw,48px);
+  opacity:0;transition:opacity .25s ease;
+}
+.lb.open{display:flex;opacity:1}
+.lb-stage{
+  position:relative;width:100%;max-width:960px;height:100%;max-height:92vh;
+  display:flex;flex-direction:column;
+}
+.lb-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-bottom:12px;color:var(--paper);
+}
+.lb-title{
+  font-family:var(--serif-latin);font-style:italic;font-size:15px;
+  letter-spacing:.08em;color:rgba(245,243,238,.8);
+}
+.lb-actions{display:flex;gap:10px;align-items:center}
+.lb-open,.lb-close{
+  font-size:12px;letter-spacing:.14em;text-decoration:none;
+  color:var(--paper);border:1px solid rgba(245,243,238,.4);
+  padding:7px 14px;background:transparent;cursor:pointer;
+  transition:border-color .2s,background .2s;font-family:var(--sans);
+}
+.lb-open:hover,.lb-close:hover{border-color:var(--brass);background:rgba(169,139,82,.15)}
+.lb-body{
+  flex:1;background:#000;border:1px solid rgba(245,243,238,.16);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  min-height:0;
+}
+.lb-body iframe{width:100%;height:100%;border:0;background:#3a3a3a}
+.lb-body img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+</style>
+</head>
+<body>
+
+<nav aria-label="主選單">
+  <div class="wrap">
+    <a class="nav-name" href="#top">溫瑋淇 · VICKY WEN</a>
+    <ul class="nav-links">
+      <li><a href="#about">關於</a></li>
+      <li><a href="#motion">動態影像</a></li>
+      <li><a href="#cases">企劃案例</a></li>
+      <li><a href="#design">平面設計</a></li>
+      <li><a href="#contact">聯絡</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══════════ COVER ══════════ -->
+<header id="top">
+  <div class="cover">
+    <p class="cover-eyebrow">Programme</p>
+    <div class="cover-rule" aria-hidden="true"></div>
+    <h1>溫瑋淇</h1>
+    <p class="latin-name">Vicky Wen</p>
+    <p class="cover-roles">活動企劃<span>·</span>動態影像<span>·</span>平面設計</p>
+    <p class="cover-lede">六年橫跨台灣與加拿大——從國際音樂家巡演、企業活動，到 54 萬訂閱 YouTube 頻道的動態圖像。以音樂與設計的雙重背景，把每一個專案當成一場演出來完成。</p>
+    <div class="cover-stats">
+      <div class="stat"><b>6+</b><small>年企劃與設計經驗</small></div>
+      <div class="stat"><b class="sm">NT$2,000萬</b><small>皮耶絲巡演總票房</small></div>
+      <div class="stat"><b>54萬</b><small>訂閱頻道・動態設計</small></div>
+      <div class="stat"><b>4年</b><small>台積電專案 100% 續約</small></div>
+    </div>
+  </div>
+  <p class="scroll-hint">Scroll</p>
+</header>
+
+<!-- ══════════ Ⅰ ABOUT ══════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="mvt reveal">
+      <span class="mvt-no">Ⅰ.</span>
+      <h2>關於瑋淇<span class="en">Overture</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-main reveal">
+        <p>擁有 6 年跨台灣與加拿大市場的展場活動、行銷與視覺設計經驗。曾於台灣 <span class="em">Classical FM97.7 古典音樂電台</span>擔任活動與行銷企劃近五年，服務客戶包含賓士、法國巴黎銀行、渣打銀行、台積電與福斯汽車；策劃並行銷 20 餘場國際音樂家音樂會。</p>
+        <p>主導 2022 與 2024 兩度<span class="em">「皮耶絲台灣巡迴」</span>行銷——於台北國家音樂廳、台中國家歌劇院、高雄衛武營三大國家級場館票房完售，總票房突破新台幣兩千萬元；全權負責的節目冊售出 3,000 餘本，單場營收突破新台幣 30 萬元。</p>
+        <p>2025 年–2026 年旅居加拿大自由接案：為 54 萬訂閱的 YouTube 頻道《音樂家的無聊人生》製作動態圖像與剪輯、承接 Classical FM97.7 企業活動展場設計，並以個人工作室 <span class="em">57 Design Studio</span> 提供音樂會主視覺設計。目前尋求行銷、平面設計或動態設計的遠端／混合型工作機會。</p>
+      </div>
+      <aside class="about-side reveal">
+        <h3>Experience</h3>
+        <ul>
+          <li><b>Musecow《音樂家的無聊人生》<br>動態圖像與剪輯</b><span>2024 –</span></li>
+          <li><b>57 Design Studio<br>音樂會視覺設計</b><span>2018 –</span></li>
+          <li><b>Unifloor Trading（溫哥華）<br>視覺設計與行銷</b><span>2025</span></li>
+          <li><b>Classical FM97.7<br>活動與行銷企劃</b><span>2020 – 25</span></li>
+        </ul>
+        <div class="tools">
+          <h3>Skills</h3>
+          <div class="tag-row">
+            <span class="tag">After Effects</span>
+            <span class="tag">Premiere Pro</span>
+            <span class="tag">Illustrator</span>
+            <span class="tag">InDesign</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">活動企劃</span>
+            <span class="tag">社群行銷</span>
+            <span class="tag">中英雙語協作</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Ⅱ MOTION ══════════ -->
+<section id="motion">
+  <div class="wrap">
+    <div class="mvt reveal">
+      <span class="mvt-no" style="color:var(--brass)">Ⅱ.</span>
+      <h2>動態影像<span class="en">Motion &amp; Editing</span></h2>
+    </div>
+    <p class="section-note reveal">自 2024 年 12 月起擔任 <b>54 萬訂閱</b>音樂知識頻道《音樂家的無聊人生》的動態圖像設計與剪輯師——把複雜的樂理知識轉化為淺顯易懂的動態圖像，全遠端與台灣團隊協作、穩定準時交付；加入後頻道觀看次數成長 <b>5%</b>。以下為我負責剪輯與動態設計的作品：</p>
+    <div class="video-grid">
+      <figure class="video wide reveal">
+        <div class="frame"><button class="vid-btn" type="button" data-id="YChlv0nklJI" aria-label="播放：馬勒第二號交響曲深度解析">
+          <img loading="lazy" src="https://i.ytimg.com/vi/YChlv0nklJI/hqdefault.jpg" alt="馬勒第二號交響曲深度解析 影片縮圖">
+          <span class="play" aria-hidden="true"></span>
+        </button></div>
+        <figcaption><span>馬勒第二號交響曲・54 分鐘深度解析</span><i>Featured</i></figcaption>
+      </figure>
+      <figure class="video reveal">
+        <div class="frame"><button class="vid-btn" type="button" data-id="LMozgXT5Kzs" aria-label="播放剪輯作品">
+          <img loading="lazy" src="https://i.ytimg.com/vi/LMozgXT5Kzs/hqdefault.jpg" alt="剪輯作品 影片縮圖">
+          <span class="play" aria-hidden="true"></span>
+        </button></div>
+        <figcaption><span>剪輯・動態圖像</span></figcaption>
+      </figure>
+      <figure class="video reveal">
+        <div class="frame"><button class="vid-btn" type="button" data-id="RS_KYACSrSw" aria-label="播放剪輯作品">
+          <img loading="lazy" src="https://i.ytimg.com/vi/RS_KYACSrSw/hqdefault.jpg" alt="剪輯作品 影片縮圖">
+          <span class="play" aria-hidden="true"></span>
+        </button></div>
+        <figcaption><span>剪輯・動態圖像</span></figcaption>
+      </figure>
+      <figure class="video reveal">
+        <div class="frame"><button class="vid-btn" type="button" data-id="ruDLg6C7GWA" aria-label="播放剪輯作品">
+          <img loading="lazy" src="https://i.ytimg.com/vi/ruDLg6C7GWA/hqdefault.jpg" alt="剪輯作品 影片縮圖">
+          <span class="play" aria-hidden="true"></span>
+        </button></div>
+        <figcaption><span>剪輯・動態圖像</span></figcaption>
+      </figure>
+      <figure class="video reveal">
+        <div class="frame"><button class="vid-btn" type="button" data-id="5M2nz6DNHpY" aria-label="播放剪輯作品">
+          <img loading="lazy" src="https://i.ytimg.com/vi/5M2nz6DNHpY/hqdefault.jpg" alt="剪輯作品 影片縮圖">
+          <span class="play" aria-hidden="true"></span>
+        </button></div>
+        <figcaption><span>剪輯・動態圖像</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Ⅲ CASE STUDIES ══════════ -->
+<section id="cases">
+  <div class="wrap">
+    <div class="mvt reveal">
+      <span class="mvt-no">Ⅲ.</span>
+      <h2>企劃案例<span class="en">Case Studies</span></h2>
+    </div>
+    <p class="section-note reveal">從國際巡演到企業活動——每一案皆涵蓋企劃、設計與現場執行，並附完整案例研究 PDF。</p>
+    <div class="case-list">
+
+      <article class="case reveal">
+        <div class="case-year">2022 – 2025</div>
+        <div>
+          <h3>台積電女科學家之旅</h3>
+          <p class="case-en">TSMC Women Scientists Journey — Programme Operations Lead</p>
+          <p>受台積電文教基金會與國立自然科學博物館共同委託，擔任全國 12 所高中的唯一聯繫窗口。統籌保險、住宿、餐飲、交通與現場帶隊，建立可年年沿用的 SOP 系統，連續四年續約、零意外。</p>
+          <div class="case-metrics"><span><b>4</b> 年 100% 續約</span><span><b>1,728</b> 位師生參與</span><span><b>4.54</b> / 5 滿意度</span></div>
+        </div>
+        <a class="case-link" data-pdf="tsmc_case.pdf" data-title="TSMC 女科學家之旅・案例研究" href="tsmc_case.pdf" target="_blank" rel="noopener">案例 PDF ↗</a>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-year">2025 –</div>
+        <div>
+          <h3>渣打 Priority Private 分行開幕・展場視覺</h3>
+          <p class="case-en">Standard Chartered Priority Private — Exhibition Visual &amp; Spatial Design</p>
+          <p>為渣打國際商業銀行 Priority Private 私人理財中心之台中市政分行開幕盛典與台北松高分行開幕專案，擔任展場視覺設計師。以遠端跨團隊協作方式，負責品牌視覺延伸、2D／3D 空間實景合成模擬與物料規格控管，將品牌形象完整延伸至實體展場。</p>
+          <div class="case-metrics"><span>品牌視覺延伸</span><span>2D／3D 實景合成模擬</span><span>物料規格控管</span></div>
+        </div>
+        <a class="case-link" data-pdf="scb_case.pdf" data-title="渣打 Priority Private・展場視覺設計作品集" href="scb_case.pdf" target="_blank" rel="noopener">作品 PDF ↗</a>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-year">2022 · 2024</div>
+        <div>
+          <h3>皮耶絲台灣巡迴・節目冊設計</h3>
+          <p class="case-en">Maria João Pires in Taiwan — Marketing &amp; Programme Booklet</p>
+          <p>主導兩度巡演行銷，於台北國家音樂廳、台中國家歌劇院、高雄衛武營三大國家級場館票房完售。全權負責節目冊設計，並策劃觀眾照片募集活動收錄冊中。</p>
+          <div class="case-metrics"><span><b>NT$2,000萬+</b> 總票房</span><span><b>3,000+</b> 本節目冊售出</span><span><b>NT$30萬+</b> 單場冊營收</span></div>
+        </div>
+        <a class="case-link" data-pdf="pires_booklet.pdf" data-title="皮耶絲台灣巡迴・節目冊" href="pires_booklet.pdf" target="_blank" rel="noopener">作品 PDF ↗</a>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-year">Corporate</div>
+        <div>
+          <h3>Mercedes-Benz 啤酒節</h3>
+          <p class="case-en">Mercedes-Benz Octoberfest — Event Design &amp; Execution</p>
+          <p>企業活動之視覺設計與現場執行：從活動主視覺、宣傳物料到現場氛圍營造，為品牌打造完整的活動體驗。</p>
+        </div>
+        <a class="case-link" data-pdf="mercedes_case.pdf" data-title="Mercedes-Benz 啤酒節・案例" href="mercedes_case.pdf" target="_blank" rel="noopener">案例 PDF ↗</a>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-year">Corporate</div>
+        <div>
+          <h3>法國巴黎銀行・音樂欣賞會</h3>
+          <p class="case-en">BNP Paribas — Private Concert Event</p>
+          <p>為金融品牌客戶策劃音樂欣賞會：結合古典音樂內容專業與活動企劃，從邀請視覺到現場流程一手包辦。其他企業客戶包含渣打銀行、福斯汽車等。</p>
+        </div>
+        <a class="case-link" data-pdf="bnp_case.pdf" data-title="法國巴黎銀行・音樂欣賞會案例" href="bnp_case.pdf" target="_blank" rel="noopener">案例 PDF ↗</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Ⅳ GRAPHIC DESIGN ══════════ -->
+<section id="design">
+  <div class="wrap">
+    <div class="mvt reveal">
+      <span class="mvt-no">Ⅳ.</span>
+      <h2>平面設計｜打造國際音樂主視覺<span class="en">57 Design Studio</span></h2>
+    </div>
+    <p class="section-note reveal">透過個人工作室「伍柒設計」，專注音樂會主視覺——海報、邀請卡、節目冊與摺頁，服務對象從學生音樂會到國際級音樂家巡演。</p>
+    <div class="poster-grid">
+      <a class="poster reveal" data-img="images/tsmc_kv.jpg" data-title="TSMC 樂無界・巴赫無伴奏大提琴組曲全集" href="images/tsmc_kv.jpg">
+        <figure>
+          <div class="ph"><img loading="lazy" src="images/tsmc_kv.jpg" alt="TSMC 樂無界音樂會 巴赫無伴奏大提琴組曲全集 主視覺 楊文信"></div>
+          <figcaption><b>TSMC 樂無界・巴赫無伴奏</b>Cello Suites — Key Visual</figcaption>
+        </figure>
+      </a>
+      <a class="poster reveal" data-img="images/paradiso_2.jpg" data-title="新天堂樂園・義大利電影爵士夜" href="images/paradiso_2.jpg">
+        <figure>
+          <div class="ph"><img loading="lazy" src="images/paradiso_2.jpg" alt="新天堂樂園 義大利電影爵士夜 主視覺"></div>
+          <figcaption><b>新天堂樂園・電影爵士夜</b>Cinema Paradiso — Key Visual</figcaption>
+        </figure>
+      </a>
+      <a class="poster reveal" data-img="https://wenmikin-del.github.io/57design/images/%E6%B3%95%E5%9C%8B%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B3%95%E5%9C%8B%E4%BD%9C%E5%93%81%E9%9B%86I_0223_57design.jpg" data-title="法國作品集・薩克斯風獨奏會" href="https://wenmikin-del.github.io/57design/#works" target="_blank" rel="noopener">
+        <figure>
+          <div class="ph"><img loading="lazy" src="https://wenmikin-del.github.io/57design/images/%E6%B3%95%E5%9C%8B%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B3%95%E5%9C%8B%E4%BD%9C%E5%93%81%E9%9B%86I_0223_57design.jpg" alt="法國作品集 薩克斯風獨奏會海報"></div>
+          <figcaption><b>法國作品集</b>Poster &amp; Programme</figcaption>
+        </figure>
+      </a>
+      <a class="poster reveal" data-img="https://wenmikin-del.github.io/57design/images/maltivers/Multivers.jpg" data-title="Multivers・年度音樂會視覺" href="https://wenmikin-del.github.io/57design/#works" target="_blank" rel="noopener">
+        <figure>
+          <div class="ph"><img loading="lazy" src="https://wenmikin-del.github.io/57design/images/maltivers/Multivers.jpg" alt="Multivers 年度音樂會視覺"></div>
+          <figcaption><b>Multivers</b>Annual Concert Visual</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="design-cta reveal">
+      <a href="https://wenmikin-del.github.io/57design/" target="_blank" rel="noopener">前往 57 DESIGN STUDIO 完整作品集 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ENCORE / CONTACT ══════════ -->
+<footer id="contact">
+  <p class="encore-eyebrow">Encore</p>
+  <h2>一起完成下一場演出</h2>
+  <p class="foot-note">目前開放行銷、平面設計與動態設計之遠端／混合型合作機會，中英雙語協作。</p>
+  <div class="contact-row">
+    <a href="mailto:wenmikin@gmail.com">EMAIL ─ WENMIKIN@GMAIL.COM</a>
+    <a href="https://www.linkedin.com/in/vicky-wen-hi/" target="_blank" rel="noopener">LINKEDIN</a>
+    <a href="https://www.instagram.com/57design_studio" target="_blank" rel="noopener">INSTAGRAM · 57DESIGN_STUDIO</a>
+  </div>
+  <p class="fin">— Fin. · © Vicky Wen 溫瑋淇 2026 —</p>
+</footer>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-hidden="true" aria-label="作品瀏覽">
+  <div class="lb-stage">
+    <div class="lb-bar">
+      <span class="lb-title" id="lb-title"></span>
+      <div class="lb-actions">
+        <a class="lb-open" id="lb-open" href="#" target="_blank" rel="noopener">新分頁開啟 ↗</a>
+        <button class="lb-close" id="lb-close" type="button" aria-label="關閉">✕ 關閉</button>
+      </div>
+    </div>
+    <div class="lb-body" id="lb-body"></div>
+  </div>
+</div>
+
+<script>
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---- Lightbox: open PDFs and posters inline ---- */
+const lb=document.getElementById('lb');
+const lbBody=document.getElementById('lb-body');
+const lbTitle=document.getElementById('lb-title');
+const lbOpen=document.getElementById('lb-open');
+let lastFocus=null;
+
+function openLB(src,title,type){
+  lastFocus=document.activeElement;
+  lbTitle.textContent=title||'';
+  lbOpen.href=src;
+  lbBody.innerHTML = type==='img'
+    ? '<img src="'+src+'" alt="'+(title||'')+'">'
+    : '<iframe src="'+src+'#view=FitH" title="'+(title||'')+'"></iframe>';
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  document.getElementById('lb-close').focus();
+}
+function closeLB(){
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden','true');
+  lbBody.innerHTML='';
+  document.body.style.overflow='';
+  if(lastFocus)lastFocus.focus();
+}
+
+document.querySelectorAll('[data-pdf]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();openLB(a.dataset.pdf,a.dataset.title,'pdf')});
+});
+document.querySelectorAll('[data-img]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();openLB(a.dataset.img,a.dataset.title,'img')});
+});
+document.getElementById('lb-close').addEventListener('click',closeLB);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open'))closeLB()});
+document.querySelectorAll('.vid-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const id=btn.dataset.id;
+    const f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title='影片播放';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen=true;
+    f.referrerPolicy='strict-origin-when-cross-origin';
+    btn.replaceWith(f);
+  });
+});
+</script>
+</body>
+</html>
