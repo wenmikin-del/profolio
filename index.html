@@ -119,14 +119,21 @@ header{
   padding-top:34px;gap:12px;
 }
 @media(max-width:680px){.cover-stats{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+.stat{text-align:center}
 .stat b{
-  display:block;font-family:var(--serif-latin);font-weight:500;
-  font-size:clamp(26px,4vw,36px);line-height:1.1;letter-spacing:.02em;
-  white-space:nowrap;
+  display:flex;align-items:baseline;justify-content:center;
+  font-family:var(--serif-latin);font-weight:500;
+  font-size:clamp(27px,3.9vw,36px);line-height:1;
+  height:clamp(30px,4.2vw,38px);
+  letter-spacing:.01em;white-space:nowrap;
 }
-.stat b.sm{font-size:clamp(19px,2.9vw,27px);letter-spacing:0}
+.stat b .u{
+  font-family:var(--serif);font-size:.52em;font-weight:500;
+  letter-spacing:.04em;margin-left:1px;
+}
+.stat b .u.pre{margin:0 2px 0 0;letter-spacing:.02em}
 .stat small{
-  display:block;margin-top:8px;
+  display:block;margin-top:12px;
   font-size:11.5px;letter-spacing:.14em;color:rgba(245,243,238,.6);
 }
 .scroll-hint{
@@ -418,10 +425,10 @@ footer .foot-note{
     <p class="cover-roles">活動企劃<span>·</span>動態影像<span>·</span>平面設計</p>
     <p class="cover-lede">六年橫跨台灣與加拿大——從國際音樂家巡演、企業活動，到 54 萬訂閱 YouTube 頻道的動態圖像。以音樂與設計的雙重背景，把每一個專案當成一場演出來完成。</p>
     <div class="cover-stats">
-      <div class="stat"><b>6+</b><small>年企劃與設計經驗</small></div>
-      <div class="stat"><b class="sm">NT$2,000萬</b><small>皮耶絲巡演總票房</small></div>
-      <div class="stat"><b>54萬</b><small>訂閱頻道・動態設計</small></div>
-      <div class="stat"><b>4年</b><small>台積電專案 100% 續約</small></div>
+      <div class="stat"><b>6<span class="u">+</span></b><small>年企劃與設計經驗</small></div>
+      <div class="stat"><b><span class="u pre">NT$</span>2,000<span class="u">萬</span></b><small>皮耶絲巡演總營收</small></div>
+      <div class="stat"><b>54<span class="u">萬</span></b><small>訂閱頻道・動態設計</small></div>
+      <div class="stat"><b>4<span class="u">年</span></b><small>台積電專案 100% 續約</small></div>
     </div>
   </div>
   <p class="scroll-hint">Scroll</p>
@@ -442,10 +449,10 @@ footer .foot-note{
         .about-main a:hover{color:var(--velvet);text-decoration-color:var(--velvet)}
       </style>
       <div class="about-main reveal">
-        <p><strong class="em">因為我懂被注視的感覺。</strong>我曾站在舞台上，現在站在幕後。音樂系出身，設計與行銷是我自學的第二專業——這個轉換給了我一項少見的優勢：做企劃與視覺時，我永遠先站在接收端思考，什麼能讓人停下來、被說服、願意買單。</p>
+        <p><strong class="em">因為我懂被注視的感覺。</strong>音樂系出身的我曾站在舞台上，現在選擇站在幕後。設計與行銷是我自學的第二專業——這個轉換給了我一項少見的優勢：做企劃與視覺時，我永遠先站在接收端思考，什麼能讓人停下來、被說服、願意買單。</p>
         <p><strong class="em">因為我交得出數字。</strong>任職 <b>Classical FM97.7</b> 近五年，服務賓士、渣打銀行、法國巴黎銀行、台積電、福斯汽車等企業客戶，累積 <b>20 餘場</b>大型專案。主導 2022、2024 兩度「皮耶絲台灣巡迴」行銷：跨台北、台中、高雄三大場館全數完售，總營收逾<b>新台幣 2,000 萬元</b>；主責的節目冊售出 <b>3,000 餘本</b>、單場周邊營收突破 <b>30 萬元</b>，從商品定價、視覺到通路溝通一手規劃。</p>
         <p><strong class="em">因為我跨得過產業與語言。</strong>2025 年於加拿大溫哥華 <b><a href="https://unifloor.ca/" target="_blank" rel="noopener">Unifloor Trading Inc.</a> Marketing Team</b>，負責品牌設計、社群內容、官網管理與展會行銷，主導 IDS 展覽攤位視覺全案並串接 O2O 社群導流，累積英語環境下的跨產業品牌經驗。同期為 <b>54 萬訂閱</b>頻道《音樂家的無聊人生》製作動態圖像與剪輯；2018 年起經營 <b>57 Design Studio</b>，從需求訪談、報價提案到交付一手完成。</p>
-        <p><strong class="em">因為我學得比誰都快。</strong>從音樂系畢業，到今天成為能獨當一面的設計與行銷企劃，這條路本身就是最好的證明：沒有科班訓練，我靠自學五套 Adobe 軟體與六年實戰走到這裡。同樣的學習模式延續到今天——我已將 <b>AI 納入日常工作流程</b>加速發想與製作，本站即由我以 AI 協作，從企劃、設計到前端實作獨立完成。我習慣跨領域思考，能兼顧美感與商業目標，具備<b>中英雙語溝通與遠端協作</b>經驗。目前尋求電商、外商與品牌端的行銷企劃或品牌視覺設計職位，可遠端／混合型合作。</p>
+        <p><strong class="em">因為我學得比誰都快。</strong>非本科系畢業，如今成為獨當一面的設計與行銷企劃，這條路本身就是最好的證明：沒有科班訓練，我靠自學五套 Adobe 軟體與六年實戰走到這裡。同樣的學習模式延續到今天——我已將 <b>AI 納入日常工作流程</b>加速發想與製作，本站即由我以 AI 協作，從設計到前端實作獨立完成。我習慣跨領域思考，能兼顧美感與商業目標。</p>
       </div>
       <aside class="about-side reveal">
         <h3>Experience</h3>
