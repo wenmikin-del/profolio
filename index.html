@@ -372,6 +372,25 @@ footer .foot-note{
 }
 .lb-body iframe{width:100%;height:100%;border:0;background:#3a3a3a}
 .lb-body img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+
+/* gallery mode: vertical scroll through a series */
+.lb-body.gallery{
+  display:block;overflow-y:auto;overflow-x:hidden;
+  background:#0d0c0f;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+}
+.lb-body.gallery img{
+  max-width:100%;max-height:none;width:auto;height:auto;
+  margin:0 auto;padding:14px 14px 0;
+}
+.lb-count{
+  font-size:11.5px;letter-spacing:.16em;color:rgba(245,243,238,.55);
+  font-family:var(--serif-latin);font-style:italic;white-space:nowrap;
+}
+.lb-hint{
+  text-align:center;color:rgba(245,243,238,.45);
+  font-size:11px;letter-spacing:.18em;padding:14px 0 18px;
+}
 </style>
 </head>
 <body>
@@ -572,13 +591,13 @@ footer .foot-note{
     </div>
     <p class="section-note reveal">專注打造高質感的品牌與演出主視覺——從視覺定位發想，延伸至海報、節目冊與數位社群素材。不僅服務國際級音樂家巡演，更具備將藝術美學轉化為商業品牌視覺的完整執行力。</p>
     <div class="poster-grid">
-      <a class="poster reveal" data-img="images/tsmc_kv.jpg" data-title="TSMC 樂無界・巴赫無伴奏大提琴組曲全集" href="images/tsmc_kv.jpg">
+      <a class="poster reveal" data-gallery="images/tsmc_kv.jpg,images/tsmc_kv-2.jpg,images/tsmc_kv-3.jpg,images/tsmc_kv-4.jpg,images/tsmc_kv-5.jpg" data-title="TSMC 樂無界・巴赫無伴奏大提琴組曲全集" href="images/tsmc_kv.jpg">
         <figure>
           <div class="ph"><img loading="lazy" src="images/tsmc_kv.jpg" alt="TSMC 樂無界音樂會 巴赫無伴奏大提琴組曲全集 主視覺 楊文信"></div>
           <figcaption><b>TSMC 樂無界・巴赫無伴奏</b>Cello Suites — Key Visual</figcaption>
         </figure>
       </a>
-      <a class="poster reveal" data-img="images/paradiso_2.jpg" data-title="新天堂樂園・義大利電影爵士夜" href="images/paradiso_2.jpg">
+      <a class="poster reveal" data-gallery="images/paradiso_2.jpg,images/paradiso_3.png,images/paradiso_4.jpg" data-title="新天堂樂園・義大利電影爵士夜" href="images/paradiso_2.jpg">
         <figure>
           <div class="ph"><img loading="lazy" src="images/paradiso_2.jpg" alt="新天堂樂園 義大利電影爵士夜 主視覺"></div>
           <figcaption><b>新天堂樂園・電影爵士夜</b>Cinema Paradiso — Key Visual</figcaption>
@@ -622,6 +641,7 @@ footer .foot-note{
     <div class="lb-bar">
       <span class="lb-title" id="lb-title"></span>
       <div class="lb-actions">
+        <span class="lb-count" id="lb-count"></span>
         <a class="lb-open" id="lb-open" href="#" target="_blank" rel="noopener">新分頁開啟 ↗</a>
         <button class="lb-close" id="lb-close" type="button" aria-label="關閉">✕ 關閉</button>
       </div>
@@ -636,20 +656,53 @@ const io=new IntersectionObserver(es=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ---- Lightbox: open PDFs and posters inline ---- */
+/* ---- Lightbox: PDFs, single images, and image galleries ---- */
 const lb=document.getElementById('lb');
 const lbBody=document.getElementById('lb-body');
 const lbTitle=document.getElementById('lb-title');
 const lbOpen=document.getElementById('lb-open');
+const lbCount=document.getElementById('lb-count');
 let lastFocus=null;
 
 function openLB(src,title,type){
   lastFocus=document.activeElement;
   lbTitle.textContent=title||'';
   lbOpen.href=src;
+  lbBody.classList.remove('gallery');
+  lbCount.textContent='';
   lbBody.innerHTML = type==='img'
     ? '<img src="'+src+'" alt="'+(title||'')+'">'
     : '<iframe src="'+src+'#view=FitH" title="'+(title||'')+'"></iframe>';
+  showLB();
+}
+
+function openGallery(list,title){
+  lastFocus=document.activeElement;
+  const imgs=list.split(',').map(s=>s.trim()).filter(Boolean);
+  lbTitle.textContent=title||'';
+  lbOpen.href=imgs[0];
+  lbBody.classList.add('gallery');
+  lbBody.innerHTML=imgs.map((s,i)=>
+    '<img src="'+s+'" alt="'+(title||'')+' '+(i+1)+'" loading="'+(i?'lazy':'eager')+'">'
+  ).join('')+'<p class="lb-hint">↓ 向下滑動瀏覽全部 '+imgs.length+' 張 ↓</p>';
+  lbCount.textContent='1 / '+imgs.length;
+  lbBody.scrollTop=0;
+  trackScroll(imgs.length);
+  showLB();
+}
+
+function trackScroll(total){
+  const nodes=[...lbBody.querySelectorAll('img')];
+  lbBody.onscroll=()=>{
+    const mid=lbBody.scrollTop+lbBody.clientHeight/2;
+    let cur=1;
+    nodes.forEach((n,i)=>{if(n.offsetTop<=mid)cur=i+1});
+    lbCount.textContent=cur+' / '+total;
+    lbOpen.href=nodes[cur-1].getAttribute('src');
+  };
+}
+
+function showLB(){
   lb.classList.add('open');
   lb.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
@@ -658,7 +711,10 @@ function openLB(src,title,type){
 function closeLB(){
   lb.classList.remove('open');
   lb.setAttribute('aria-hidden','true');
+  lbBody.onscroll=null;
   lbBody.innerHTML='';
+  lbBody.classList.remove('gallery');
+  lbCount.textContent='';
   document.body.style.overflow='';
   if(lastFocus)lastFocus.focus();
 }
@@ -669,9 +725,19 @@ document.querySelectorAll('[data-pdf]').forEach(a=>{
 document.querySelectorAll('[data-img]').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();openLB(a.dataset.img,a.dataset.title,'img')});
 });
+document.querySelectorAll('[data-gallery]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();openGallery(a.dataset.gallery,a.dataset.title)});
+});
 document.getElementById('lb-close').addEventListener('click',closeLB);
 lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open'))closeLB()});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLB();
+  if(lbBody.classList.contains('gallery')){
+    if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();lbBody.scrollBy({top:lbBody.clientHeight*.85})}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();lbBody.scrollBy({top:-lbBody.clientHeight*.85})}
+  }
+});
 document.querySelectorAll('.vid-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const id=btn.dataset.id;
